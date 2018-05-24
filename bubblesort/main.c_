@@ -1,0 +1,31 @@
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+#include "bubblesort.h"
+
+int main(void)
+
+{
+
+    srand(time(NULL));   // should only be called once
+
+    int size = 10;
+    int item[10];
+
+    for(int i=0; i<size; i++)
+    {
+        item[i]=rand()%100;
+    }
+    
+    bubblesort(item, size);
+
+
+    for(int i=0; i<size; i++)
+     {
+         printf("%i, ", item[i]);
+     }
+        
+    return 0;
+    
+}
