@@ -9,16 +9,31 @@ template<size_t SIZE, class T> inline size_t array_size(T (&arr)[SIZE]) {
 }
 
 int main(int argc, char* argv[]) {
-    Author a("paulo coelho");
-    Book b("valquirias", a);
-    Book books[] = {b};
+
+    // reading data
+    string author1("marcelo");
+    string booktitle1("paper1");
+    string booktitle2("paper2");    
+
+    string author2("fernanda");
+    string booktitle3("paper3");
+    string booktitle4("paper4");    
+
+    // building objects
+    Author a1(author1);    
+    Book b1(booktitle1, a1);
+    Book b2(booktitle2, a1);    
+
+    Author a2(author2);
+    Book b3(booktitle3, a2);
+    Book b4(booktitle4, a2);    
+
+    Book books[] = {b1, b2, b3, b4};
     
     Library lib(books);
 
-    // cout << "tamanho do array: " << array_size(books) << endl;
-    // cout << lib.books[0].name << " written by " << lib.books[0].author.name << endl;
-    
-    lib.findTitles("paulo coelho", books, array_size(books));
-    
-    return 0;
+    // calling function
+    Book* titles = lib.findTitles("marcelo", books, array_size(books));
+    if (titles)
+        cout << "there are books associated with this author" << endl;
 }
