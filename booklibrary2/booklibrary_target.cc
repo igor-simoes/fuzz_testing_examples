@@ -35,7 +35,7 @@ extern "C" int LLVMFuzzerTestOneInput(const u_int8_t* Data, size_t size) {
     Library lib(books);
 
     // calling function
-    lib.findTitles("paulo coelho", books, array_size(books));
+    lib.findTitles("paulo", books, array_size(books));
     
     return 0;
 }
