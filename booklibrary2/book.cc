@@ -6,4 +6,9 @@ Book::Book(string const& _name, Author const& _author) : name(_name), author(_au
 
 Library::Library(Book* _books) : books(_books) { }
 
-// Book* Library::findTitles(string name, Book* books, int size) { return 0; }
+Book* Library::findTitles(string const& name, Book* books, int size)
+{
+    
+
+    return 0;
+}

@@ -7,12 +7,13 @@ function compile() {
     (
         cd ${NAME}
         #$CXX -Wall -g -fsanitize=fuzzer,address *.cc *.c -o ${NAME}_target.out
-        $CXX -Wall -g -fsanitize=fuzzer *.cc *.c -o ${NAME}_target.out -lstdc++
+        $CXX -Wall -g -fsanitize=fuzzer *.cc -o ${NAME}_target.out -lstdc++
         mkdir -p corpus
-        ./${NAME}_target.out -runs=1000 corpus
+        ./${NAME}_target.out -runs=10000 corpus
     ) # leave directory
 }
 
 
-compile "bubblesort"
+#compile "bubblesort"
 #compile "booklibrary"
+compile "booklibrary2"

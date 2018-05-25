@@ -1,0 +1,24 @@
+#include <iostream>
+
+#include "book.h"
+
+using namespace std;
+
+template<size_t SIZE, class T> inline size_t array_size(T (&arr)[SIZE]) {
+    return SIZE;
+}
+
+int main(int argc, char* argv[]) {
+    Author a("paulo coelho");
+    Book b("valquirias", a);
+    Book books[] = {b};
+    
+    Library lib(books);
+
+    // cout << "tamanho do array: " << array_size(books) << endl;
+    // cout << lib.books[0].name << " written by " << lib.books[0].author.name << endl;
+    
+    lib.findTitles("paulo coelho", books, array_size(books));
+    
+    return 0;
+}

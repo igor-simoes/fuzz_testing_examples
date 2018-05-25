@@ -24,7 +24,7 @@ class Library
 public:        
     Book* books;
     Library(Book* books);
-    // Book* findTitles(string const& name, Book* books, int size);
+    Book* findTitles(string const& name, Book* books, int size);
 };
 
 #endif // BOOK_H_
