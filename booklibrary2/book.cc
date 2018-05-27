@@ -22,8 +22,10 @@ Book* Library::findTitles(string const& name, Book* books, int size)
     if (authorBooks.size() == 0)
         return NULL;
     if (authorBooks.size() == 2)
-        fprintf(stderr, "this is an artificial bug!");
-        abort();        
+    {
+        fprintf(stderr, "this is an artificial bug!\n");
+        abort();
+    }
     std::vector<Book> v{ std::begin(authorBooks), std::end(authorBooks) };
     return &v.at(0);
 }

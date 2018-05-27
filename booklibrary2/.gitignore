@@ -71,6 +71,3 @@ Thumbs.db
 *.dll
 *.exe
 
-*.cpp
-*.out
-*/corpus
