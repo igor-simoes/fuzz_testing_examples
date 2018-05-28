@@ -74,3 +74,4 @@ Thumbs.db
 *.cpp
 *.out
 */corpus
+*/crash*

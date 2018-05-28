@@ -20,7 +20,7 @@ extern "C" int LLVMFuzzerTestOneInput(const u_int8_t* Data, size_t size) {
     string author2 = {(char) Data[11], (char) Data[12], (char) Data[13], (char) Data[14], (char) Data[15]};
     string booktitle3 = {(char) Data[16], (char) Data[17], (char) Data[18]};
     string booktitle4 = {(char) Data[19], (char) Data[20], (char) Data[21]};
-    
+
     // building objects
     Author a1(author1);
     Book b1(booktitle1, a1);
