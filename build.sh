@@ -29,3 +29,4 @@ function compile() {
 compile "bubblesort" "bubblesort.c bubblesort_target.cc"
 compile "booklibrary" "book.c booklibrary_target.cc"
 compile "booklibrary2" "book.cc booklibrary_target.cc"
+compile "bank" "bank.cc bank_target.cc"

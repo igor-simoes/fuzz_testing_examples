@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
+#include <stdexcept>
 
 #include "account.h"
 #include "bank.h"
@@ -37,8 +38,9 @@ void Bank::createAccount(string const& owner)
 void Bank::deposit(string owner, double value){
     Account* account = this->getAccount(owner);
 
-    // intentional bug. setBalance in NULL object
-    account->setBalance(account->getBalance() + value);
+    // intentional bug. deposit on NULL object
+    if (value > 0)
+        account->setBalance(account->getBalance() + value);
 }
 
 void Bank::withdraw(string owner, double value){
@@ -46,14 +48,15 @@ void Bank::withdraw(string owner, double value){
 
     if (!(account)) return;
 
-    if (account && account->getBalance() >= value)
+    // bug will raise if (value > account.balance || value < 0)
+    if (account->getBalance() > 0)
     {
         account->setBalance(account->getBalance() - value);
     }
 
     if (account->getBalance() < 0)
     {
-        fprintf(stderr, "intentional bug: value <= 0\n");
+        fprintf(stderr, "intentional bug: balance < 0\n");
         abort();
     }
 }
